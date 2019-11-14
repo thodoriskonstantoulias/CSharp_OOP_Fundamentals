@@ -50,5 +50,29 @@ namespace ACM.BLTest
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            var cust1 = new Customer();
+            cust1.LastName = "Kos";
+            cust1.Email = "xxx@gmail.com";
+
+            bool expected = true;
+            bool actual = cust1.Validate();
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ValidateMissingLastNameValid()
+        {
+            var cust1 = new Customer();
+            cust1.Email = "xxx@gmail.com";
+
+            bool expected = false;
+            bool actual = cust1.Validate();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
