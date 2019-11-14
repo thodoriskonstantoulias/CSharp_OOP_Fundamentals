@@ -15,5 +15,6 @@ namespace ACM.BL
                 return LastName + "," + FirstName;
             }
         }
+        public static int InstanceCount { get; set; }
     }
 }
