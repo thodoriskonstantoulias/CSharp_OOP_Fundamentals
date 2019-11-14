@@ -5,6 +5,14 @@ namespace ACM.BL
 {
     public class Customer
     {
+        public Customer()
+        {
+
+        }
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+        }      
         public int CustomerId { get; private set; }
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -35,7 +43,7 @@ namespace ACM.BL
             return new Customer();
         }
         //Retrieve all customers
-        public List<Customer> RetrieveAll()
+        public List<Customer> Retrieve()
         {
             return new List<Customer>();
         }
