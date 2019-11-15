@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -19,7 +19,7 @@ namespace ACM.BL
         public string  ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
         //Validates product data
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -27,6 +27,11 @@ namespace ACM.BL
             if (CurrentPrice == null) isValid = false;
 
             return isValid;
+        }
+        //Test overriding method from object class
+        public override string ToString()
+        {
+            return ProductName;
         }
     }
 }
