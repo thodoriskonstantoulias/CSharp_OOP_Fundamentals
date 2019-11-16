@@ -7,6 +7,7 @@ namespace ACM.BL
 {
     public class Product : EntityBase, ILoggable
     {
+        //Overloading constructors
         public Product()
         {
 
@@ -15,8 +16,10 @@ namespace ACM.BL
         {
             ProductId = productId;
         }
+        //Defining getters and setters
         public int ProductId { get; private set; }
         private string _productName;
+        //Use of method of common library to get the field _productName
         public string ProductName 
         { 
             get 
@@ -30,7 +33,9 @@ namespace ACM.BL
         }
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
+
         //Validates product data
+        //Overrides the parent class abstract method
         public override bool Validate()
         {
             var isValid = true;
@@ -45,6 +50,8 @@ namespace ACM.BL
         {
             return ProductName;
         }
+
+        //Log method to show the use of interfaces 
         public string Log()
         {
             return $"{ProductId} : {ProductName} ProductDescription : {ProductDescription} Status :  {EntityState.ToString()}";

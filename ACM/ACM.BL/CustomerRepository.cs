@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ACM.BL
 {
+    //Different class for the repository to understand the separation of concerns
     public class CustomerRepository
     {
         public CustomerRepository()

@@ -6,6 +6,7 @@ namespace ACM.BL
 {
     public class Customer: EntityBase, ILoggable
     {
+        //Overloading constructors
         public Customer():this(0)
         {
 
@@ -15,6 +16,8 @@ namespace ACM.BL
             CustomerId = customerId;
             AddressList = new List<Address>();
         }      
+
+        //Defining getters and setters
         public int CustomerId { get; private set; }
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -28,9 +31,11 @@ namespace ACM.BL
                 return LastName + "," + FirstName;
             }
         }
+        //Instance count is defined as static because we want it to not get initialized after each instance
         public static int InstanceCount { get; set; }
 
         //Validates customer's data
+        //Overrides the parent class abstract method
         public override bool Validate()
         {
             var isValid = true;
@@ -40,6 +45,7 @@ namespace ACM.BL
 
             return isValid;
         }
+        //Log method to show the use of interfaces 
         public string Log()
         {
             return $"{CustomerId} : {FullName} Email : {Email} Status :  {EntityState.ToString()}";
